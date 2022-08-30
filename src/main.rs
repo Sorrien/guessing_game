@@ -9,7 +9,7 @@ fn main() {
         println!("Guess the number!");
         println!("Please input your guess.");
 
-        let secret_number = rand::thread_rng().gen_range(1, 101);
+        let secret_number = rand::thread_rng().gen_range(1..101);
 
         loop {
             let mut guess = String::new();
@@ -20,7 +20,7 @@ fn main() {
 
             let guess: u32 = match guess.trim().parse() {
                 Ok(num) => num,
-                Err(_) => { 
+                Err(_) => {
                     println!("Please enter a number!");
                     continue;
                 }
